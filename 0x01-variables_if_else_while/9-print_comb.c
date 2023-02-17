@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * print - alphabet in reverse order
+ * print - single digit numbers from 0 t0 9 separated by comma
  *
  * Return: 0 (success)
  */
@@ -13,9 +13,17 @@ int main(void)
 	int i;
 
 	for (i = 48; i <= 57; i++)
-		putchar(i);
-	for (i = 97; i <= 103; i++)
-		putchar(i);
+	{
+		if (i == '9')
+		{
+			putchar(i);
+		}
+		else
+		{
+			putchar(i);
+			putchar(',');
+		}
+	}
 	putchar('\n');
 	return (0);
 }
