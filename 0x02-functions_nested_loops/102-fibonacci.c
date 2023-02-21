@@ -8,8 +8,8 @@
 
 int main(void)
 {
-	long int num1 = 1;
-	long int num2 = 2;
+	long int num1 = 0;
+	long int num2 = 1;
 	long int fib;
 	int i;
 

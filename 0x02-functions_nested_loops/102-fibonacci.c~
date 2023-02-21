@@ -8,9 +8,9 @@
 
 int main(void)
 {
-	int num1 = 0;
-	int num2 = 1;
-	int fib;
+	long int num1 = 1;
+	long int num2 = 2;
+	long int fib;
 	int i;
 
 	for (i = 0; i < 50; i++)
@@ -18,7 +18,7 @@ int main(void)
 		fib = num1 + num2;
 		num1 = num2;
 		num2 = fib;
-		printf("%d", fib);
+		printf("%ld", fib);
 		if (i != 49)
 			printf(", ");
 	}
