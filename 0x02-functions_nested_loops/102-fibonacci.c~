@@ -19,7 +19,7 @@ int main(void)
 		num1 = num2;
 		num2 = fib;
 		printf("%d", fib);
-		if (i != 49);
+		if (i != 49)
 			printf(", ");
 	}
 	printf("\n");
