@@ -1,7 +1,8 @@
-#C PROGRAMMING PROJECTS
+# C PROGRAMMING PROJECTS
 ## C-Hello, World
 -Introduction to C
 -Complication process
+
 		-Processor
 		-Compiling
 		-Assembling
@@ -10,3 +11,7 @@
   - variable
   - conditional statements
   - loop statements
+
+## 0X02-functions_nested_loops
+   - Functions
+   - Nested loops
