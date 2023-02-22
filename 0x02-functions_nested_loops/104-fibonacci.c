@@ -8,9 +8,10 @@
 
 int main(void)
 {
-	long int num1 = 0;
-	long int num2 = 1;
-	long int fib;
+	unsigned long int num1 = 0;
+	unsigned long int num2 = 1;
+	unsigned long int fib;
+
 	int i;
 
 	for (i = 0; i < 98; i++)
@@ -18,7 +19,7 @@ int main(void)
 		fib = num1 + num2;
 		num1 = num2;
 		num2 = fib;
-		printf("%ld", fib);
+		printf("%lu", fib);
 		if (i != 97)
 			printf(", ");
 	}
