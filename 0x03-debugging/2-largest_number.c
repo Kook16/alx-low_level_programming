@@ -8,7 +8,7 @@
  * Return: largest number
  */
 
-int largest_number(long long int a, long long int b, long long int c)
+long long int largest_number(long long int a, long long int b, long long int c)
 {
 	long long int largest;
 
