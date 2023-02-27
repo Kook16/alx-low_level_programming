@@ -2,9 +2,11 @@
 #include <stdio.h>
 int main(void)
 {
-	char *str;
+	char s1[98];
+	char *ptr;
 
-	str = "I do not fear computers, i fear the lack of them - Isaac Asimov";
-	print_rev(str);
+	ptr = _strcpy(s1, "First, solve the problem. Then write the code\n");
+	printf("%s",s1);
+	printf("%s", ptr);
 	return (0);
 }
