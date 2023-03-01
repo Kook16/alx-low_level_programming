@@ -18,7 +18,7 @@ char *cap_string(char *s)
 		if (s[i] == '.' || s[i] == ';' || s[i] == ',' || s[i] == '!' ||
 s[i] == '/' || s[i] == '?' || s[i] == '"' || s[i] == ')' || s[i] == '(' ||
 s[i] == '{' || s[i] == '}' || s[i] == '\n' || s[i] == ' ' || s[i] == '\t')
-			s[i + 1] = toupper(s[i +1]);
+			s[i + 1] = toupper(s[i + 1]);
 		i++;
 	}
 	return (s);
