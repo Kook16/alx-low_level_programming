@@ -1,26 +1,19 @@
-#include <stdio.h>
 #include "main.h"
-void print_array(int *a, int n)
-{
-	int i = 0;
+#include <stdio.h>
 
-	while (i < n)
-	{
-		if (i != 0)
-			printf(", ");
-		printf("%d", a[i]);
-		i++;
-	}
-	printf("\n");
-}
-
-
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-	int a[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9,98, 1024, 1337};
+    char str[] = "Expect the best. Prepare for the worst. Capitalize on what"
+" comes.\nhello world! hello-world 0123456hello world\thello world.hello world\n";
+    char *ptr;
 
-	print_array(a,13);
-	reverse_array(a,13);
-	print_array(a,13);
-	return (0);
+    ptr = cap_string(str);
+    printf("%s", ptr);
+    printf("%s", str);
+    return (0);
 }

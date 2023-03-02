@@ -1,4 +1,3 @@
-#include <string.h>
 #include "main.h"
 #include <ctype.h>
 
@@ -10,10 +9,9 @@
 
 char *cap_string(char *s)
 {
-	int n, i = 0;
+	int i = 0;
 
-	n = strlen(s);
-	while (i < n)
+	while (s[i] != '\0')
 	{
 		if (s[0] >= 97 && s[0] >= 122)
 			s[0] = toupper(s[0]);
