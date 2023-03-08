@@ -14,7 +14,6 @@ int _sqrt_recursion(int n)
 
 	if (n <= 1)
 		return (n);
-	
 	return (sqt(n, i, n));
 }
 
@@ -37,5 +36,5 @@ int sqt(int n, int low, int high)
 	else if (srt > n)
 		return (sqt(n, low, (mid - 1)));
 	else
-		return (sqt(n, low, (mid + 1));
+		return (sqt(n, low, (mid + 1)));
 }
