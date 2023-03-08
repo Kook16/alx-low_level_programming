@@ -1,21 +1,4 @@
 #include "main.h"
-int sqt(int n, int low, int high);
-/**
- * _sqrt_recursion - returns the natural square root of a number
- * @n: Number whose natural square is required
- * Return: Integer
- */
-int _sqrt_recursion(int n)
-{
-	int i = 1;
-
-	if (n < 0)
-		return (-1);
-
-	if (n <= 1)
-		return (n);
-	return (sqt(n, i, n));
-}
 
 /**
  * sqt - Determines the square root of a number
@@ -28,7 +11,7 @@ int sqt(int n, int low, int high)
 {
 	int mid = (low + high) / 2;
 	int srt = mid * mid;
-
+	
 	if (high < low)
 		return (-1);
 	if (srt == n)
