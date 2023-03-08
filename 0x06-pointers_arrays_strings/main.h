@@ -2,15 +2,12 @@
 #define MAIN_H
 
 int _putchar(char);
-char *_strcat(char *, char *);
-char *_strncat(char *, char *, int);
-char *_strncpy(char *, char *, int);
-int _strcmp(char *, char *);
-void reverse_array(int *, int);
-char *string_toupper(char *);
-char *cap_string(char *);
-char *leet(char *);
-char *rot13(char *);
-void print_number(int);
+void _puts_recursion(char *);
+void _print_rev_recursion(char *);
+int _strlen_recursion(char *);
+int factorial(int);
+int _pow_recursion(int, int);
+int _sqrt_recursion(int);
+int is_prime_number(int);
 
 #endif
