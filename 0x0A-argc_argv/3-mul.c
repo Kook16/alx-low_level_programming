@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	(void)(argc);
 	for (i = 1; i < argc; i++)
 	{
 		mul *= atoi(argv[i]);
