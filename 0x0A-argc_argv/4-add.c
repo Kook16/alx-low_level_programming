@@ -10,9 +10,17 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum = 0;
+	int i = 0, sum = 0;
 
-	if (argc < 1)
+	while (i < argc)
+	{
+		if (atoi(argv[i]))
+		{
+			break;
+		}
+		i++;
+	}
+	if (i == argc)
 	{
 		printf("0\n");
 		return (1);
