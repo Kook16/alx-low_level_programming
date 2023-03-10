@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 	}
 	if (i == argc)
 	{
-		printf("0\n");
+		printf("%d\n", sum);
 	}
 	else
 	{
