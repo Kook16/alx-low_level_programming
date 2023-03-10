@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
 	while (i < argc)
 	{
-		if (atoi(argv[i]) && atoi(argv[i]) >= 0)
+		if (atoi(argv[i]) && atoi(argv[i]) > 0)
 		{
 			break;
 		}
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (atoi(argv[i]) && atoi(argv[i]) >= 0)
+			if (atoi(argv[i]) && atoi(argv[i]) > 0)
 			{
 				sum += atoi(argv[i]);
 			}
