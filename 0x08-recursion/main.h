@@ -10,5 +10,7 @@ int factorial(int);
 int _pow_recursion(int, int);
 int _sqrt_recursion(int);
 int is_prime_number(int);
+int palindrome(char *, int, int);
+int is_palindrome(char *);
 
 #endif

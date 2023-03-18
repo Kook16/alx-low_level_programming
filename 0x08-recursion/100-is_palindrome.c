@@ -12,7 +12,7 @@ int is_palindrome(char *s)
 {
 	int i = 0, j = strlen(s) - 1;
 
-	if (s == "")
+	if (strlen(s) == 0)
 		return (1);
 	return (palindrome(s, i, j));
 }
@@ -29,7 +29,7 @@ int palindrome(char *s, int i, int j)
 	{
 		if (i >= j)
 			return (1);
-		palindrome(s, ++i, --j);
+		return palindrome(s, ++i, --j);
 	}
 	else
 		return (0);
