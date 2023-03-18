@@ -29,7 +29,7 @@ int palindrome(char *s, int i, int j)
 	{
 		if (i >= j)
 			return (1);
-		return palindrome(s, ++i, --j);
+		return (palindrome(s, ++i, --j));
 	}
 	else
 		return (0);
