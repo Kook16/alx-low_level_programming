@@ -6,22 +6,12 @@
  * print_dog - prints a struct dog
  * @d: Address of structure dog
  */
-
 void print_dog(struct dog *d)
 {
 	if (d != NULL)
 	{
-		if ((d->name) == NULL)
-			printf("Name: %s\n", "(nil)");
-		if (d->age == 0)
-			printf("Age: %f\n", d->age);
-		if (d->owner == NULL)
-			printf("Owner: %s\n", "(nil)");
-		if (d->name != NULL &&  d->age != 0 && d->owner != NULL)
-		{
-			printf("Name = %s\n", d->name);
-			printf("Age: = %f\n", d->age);
-			printf("Owner: = %s\n", d->owner);
-		}
+		printf("Name: %s\n", (d->name != NULL) ? d->name : "(nil)");
+		printf("Age: %f\n", (d->age != 0) ? d->age : 0);
+		printf("Owner: %s\n", (d->owner != NULL) ? d->owner : "(nil)");
 	}
 }
