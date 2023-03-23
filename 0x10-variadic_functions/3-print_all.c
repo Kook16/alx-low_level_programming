@@ -1,5 +1,17 @@
 #include "variadic_functions.h"
 void string(char *s);
+
+int _strlen(const char *s)
+{
+	int i = 0;
+
+	while(*s != '\0' && s != NULL)
+	{
+		i++;
+		s++;
+	}
+	return (i);
+}
 /**
  * print_all - prints anything
  * @format: ...
@@ -10,10 +22,10 @@ void print_all(const char *const format, ...)
 	va_list ap;
 	char *s;
 
+	n = _strlen(format);
 	va_start(ap, format);
 	while (format[j] != '\0' && format != NULL)
 	{
-		n = strlen(format);
 		i = 0;
 		switch (format[j])
 		{
