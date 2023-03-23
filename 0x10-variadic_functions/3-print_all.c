@@ -6,14 +6,14 @@ void string(char *s);
  */
 void print_all(const char *const format, ...)
 {
-	int n, i = 0, j = 0;
+	int i = 0, j = 0, n;
 	va_list ap;
 	char *s;
 
 	va_start(ap, format);
-	n = strlen(format);
-	while (j < n && format != NULL)
+	while (format[j] != '\0' && format != NULL)
 	{
+		n = strlen(format);
 		i = 0;
 		switch (format[j])
 		{
