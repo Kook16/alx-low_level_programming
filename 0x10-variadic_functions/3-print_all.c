@@ -30,7 +30,7 @@ void print_all(const char *const format, ...)
 
 	n = _strlen(format);
 	va_start(ap, format);
-	while (format[j] != '\0' && format != NULL)
+	while (j < n && format != NULL)
 	{
 		i = 0;
 		switch (format[j])
