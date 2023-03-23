@@ -10,6 +10,7 @@ void print_all(const char *const format, ...)
 	int n, i = 0, j = 0;
 	va_list ap;
 	char *s;
+	char *seperator = "";
 
 	va_start(ap, format);
 	n = strlen(format);
@@ -19,23 +20,26 @@ void print_all(const char *const format, ...)
 		switch (format[j])
 		{
 		case 'c':
-			printf("%c", va_arg(ap, int));
+			printf("%s%c", seperator, va_arg(ap, int));
 			i = 1;
 			break;
 		case 'i':
-			printf("%d", va_arg(ap, int));
+			printf("%s%d", seperator, va_arg(ap, int));
 			i = 1;
 			break;
 		case 'f':
-			printf("%f", va_arg(ap, double));
+			printf("%s%f", seperator, va_arg(ap, double));
 			i = 1;
 			break;
 		case 's':
+			i = 1;
 			s = va_arg(ap, char *);
 			if (s == NULL)
-				printf("(nil)");
-			printf("%s ", s);
-			i = 1;
+			{
+				printf("%s%s", seperator, "(nil)");
+				break;
+			}
+			printf("%s%s", seperator, s);
 			break;
 		default:
 			break;
