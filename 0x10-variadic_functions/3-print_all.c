@@ -37,6 +37,8 @@ void print_all(const char *const format, ...)
 			printf("%s ", s);
 			i = 1;
 			break;
+		default:
+			break;
 		}
 		if (j != (n - 1) && i == 1)
 			printf(", ");
