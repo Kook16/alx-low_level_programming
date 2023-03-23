@@ -8,7 +8,7 @@ void print_all(const char *const format, ...)
 {
 	int n, i = 0, j = 0;
 	va_list ap;
-	char *s, *seperator;
+	char *s, *seperator = "";
 
 	va_start(ap, format);
 	n = strlen(format);
