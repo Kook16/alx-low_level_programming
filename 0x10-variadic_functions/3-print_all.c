@@ -1,5 +1,5 @@
 #include "variadic_functions.h"
-
+void print_argument(char format, va_list ap, char *seperator, int *i);
 /**
  * print_all - prints anything
  * @format: ...
