@@ -1,11 +1,17 @@
 #include "variadic_functions.h"
 void string(char *s);
 
+/**
+ * _strlen - ...
+ * @s: ...
+ * Return: ...
+ */
+
 int _strlen(const char *s)
 {
 	int i = 0;
 
-	while(*s != '\0' && s != NULL)
+	while (*s != '\0' && s != NULL)
 	{
 		i++;
 		s++;
