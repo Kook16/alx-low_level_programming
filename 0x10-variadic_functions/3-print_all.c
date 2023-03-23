@@ -15,7 +15,7 @@ void print_all(const char *const format, ...)
 	while (j < n && format != NULL)
 	{
 		i = 0;
-		switch (format[j++])
+		switch (format[j])
 		{
 		case 'c':
 			printf("%s%c", seperator, va_arg(ap, int));
@@ -39,6 +39,7 @@ void print_all(const char *const format, ...)
 		}
 		if (j != (n - 1) && i == 1)
 			printf(", ");
+		j++;
 	}
 	va_end(ap);
 	printf("\n");
