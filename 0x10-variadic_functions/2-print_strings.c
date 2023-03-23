@@ -13,7 +13,7 @@ void print_strings(const char *seperator, const unsigned int n, ...)
 	va_list pa;
 
 	va_start(pa, n);
-	if (seperator != NULL && n != 0)
+	if (n != 0)
 	{
 		for (i = 0; i < n; i++)
 		{
@@ -22,7 +22,7 @@ void print_strings(const char *seperator, const unsigned int n, ...)
 				printf("(nil)");
 			else
 				printf("%s", s);
-			if (i != (n - 1))
+			if (i != (n - 1) && seperator != NULL)
 				printf("%s", seperator);
 		}
 		printf("\n");
