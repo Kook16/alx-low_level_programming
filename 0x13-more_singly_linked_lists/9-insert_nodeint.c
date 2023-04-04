@@ -14,14 +14,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int i = 0, count;
 
 	count = count_node(*head);
+	if (idx > count)
+		return (NULL);
 	new = add(n);
 	if (new == NULL)
 		return (NULL);
-	if (idx >= count)
-	{
-		free(new);
-		return (NULL);
-	}
 	if (*head == NULL)
 	{
 		*head = new;
