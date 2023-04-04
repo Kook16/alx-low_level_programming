@@ -8,7 +8,6 @@ unsigned int count_node(const listint_t *h);
  * @n: ...
  * Return: ...
  */
-
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *node = *head, *new;
@@ -16,6 +15,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	count = count_node(*head);
 	new = add(n);
+	if (new == NULL)
+		return (NULL);
 	if (idx >= count)
 	{
 		free(new);
@@ -32,15 +33,15 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new;
 		return (*head);
 	}
-	while (i < idx - 1)
+	while (i < idx - 1 && node != NULL)
 	{
-		if (node == NULL)
-		{
-			free(new);
-			return (NULL);
-		}
 		node = node->next;
 		i++;
+	}
+	if (i < idx - 1 || node == NULL)
+	{
+		free(new);
+		return (NULL);
 	}
 	new->next = node->next;
 	node->next = new;
