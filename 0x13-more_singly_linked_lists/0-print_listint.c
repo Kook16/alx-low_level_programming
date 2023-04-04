@@ -2,8 +2,8 @@
 
 /**
  * print_listint - prints all the elements of a listint_t list.
- * @h: ....
- * Return: ...
+ * @h: A pointer to a listint_t list
+ * Return: number of nodes
  */
 
 
