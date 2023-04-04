@@ -1,5 +1,5 @@
 #include "lists.h"
-int count_node(const listint_t *h);
+unsigned int count_node(const listint_t *h);
 /**
  * delete_nodeint_at_index - deletes the node at index of a lsistint_t list
  * @head: ...
@@ -10,8 +10,7 @@ int count_node(const listint_t *h);
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	listint_t *prev = *head, *curr = *head;
-	unsigned int i = 1;
-	int count;
+	unsigned int i = 1, count;
 
 	if (*head == NULL)
 		return (-1);
@@ -44,7 +43,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
  * @h: A pointer to a listint_t list
  *Return: Number of nodes
  */
-int count_node(const listint_t *h)
+unsigned int count_node(const listint_t *h)
 {
 	int count = 0;
 
