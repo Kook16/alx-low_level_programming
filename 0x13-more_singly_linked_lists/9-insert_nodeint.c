@@ -1,5 +1,6 @@
 #include "lists.h"
 listint_t *add(const int);
+unsigned int count(const listint_t *h);
 /**
  * insert_nodeint_at_index - inserts a new node at a given position
  * @head: ...
@@ -11,9 +12,12 @@ listint_t *add(const int);
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *node = *head, *new;
-	unsigned int i = 0;
+	unsigned int i = 0, count;
 
+	count = count(*h);
 	new = add(n);
+	if (idx >= count)
+		return (NULL);
 	if (*head == NULL)
 	{
 		*head = new;
@@ -52,4 +56,22 @@ listint_t *add(const int n)
 	new->n = n;
 	new->next = NULL;
 	return (new);
+}
+
+
+/**
+ * count - ...
+ * @h: ...
+ * Return: ...
+ */
+unsigned int count(const listint_t *h)
+{
+	unsigned int count = 0;
+
+	while (h != NULL)
+	{
+		count++;
+		h = h->next;
+	}
+	return (count);
 }
