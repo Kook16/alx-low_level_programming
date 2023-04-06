@@ -20,7 +20,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
  * @n: number with set bits
  * Return: Number of setbits
  */
-unsigned long int count_bits(unsigned long int n)
+unsigned int count_bits(unsigned long int n)
 {
 	int count = 0;
 
