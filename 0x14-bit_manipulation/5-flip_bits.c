@@ -1,5 +1,5 @@
 #include "main.h"
-int count_bits(int n);
+unsigned int count_bits(unsigned long int n);
 /**
  * flip_bits - returns the no. of bit to be flip to get from one num 2 another
  * @n: number to be fliped
@@ -9,7 +9,7 @@ int count_bits(int n);
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	int num;
+	unsigned long int num;
 
 	num = n ^ m;
 	return (count_bits(num));
@@ -20,7 +20,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
  * @n: number with set bits
  * Return: Number of setbits
  */
-int count_bits(int n)
+unsigned long int count_bits(unsigned long int n)
 {
 	int count = 0;
 
