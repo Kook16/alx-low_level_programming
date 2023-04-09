@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-	int inhandle, outhandle, bytes, FD_VALUE;
+	int inhandle, outhandle, bytes;
 	char buffer[1024];
 
 	if (argc != 3)
