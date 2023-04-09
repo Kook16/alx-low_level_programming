@@ -7,7 +7,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int inhandle, outhandle, bytes;
+	int inhandle, outhandle, bytesr;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -21,27 +21,23 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
 		exit(98);
 	}
-	outhandle = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 664);
-	if (outhandle == -1)
+	outhandle = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((bytesr = read(inhandle, buffer, 1024)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-	while (1)
-	{
-		bytes = read(inhandle, buffer, 1024);
-		write(outhandle, buffer, bytes);
-		if (bytes <= 0)
-			break;
+		if (outhandle == -1 || bytesr != write(outhandle, buffer, bytesr))
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
 	}
 	if (close(inhandle) == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't close %d", inhandle);
+		dprintf(STDERR_FILENO, "Can't close fd %d", inhandle);
 		exit(100);
 	}
 	if (close(outhandle) == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't close %d", outhandle);
+		dprintf(STDERR_FILENO, "Can't close fd %d", outhandle);
 		exit(100);
 	}
 	return (0);
