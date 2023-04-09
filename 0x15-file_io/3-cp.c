@@ -7,7 +7,7 @@
  * Return: 0
  */
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	int inhandle, outhandle, bytes;
 	char buffer[1024];
@@ -18,12 +18,12 @@ int main(int argc, char **argv)
 		exit(97);
 	}
 	inhandle = open(argv[1], O_RDONLY);
-	if (inhandle == -1 || argv[1] != NULL)
+	if (inhandle == -1 || argv[1] == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", argv[1]);
 		exit(98);
 	}
-	outhandle = open(argv[2], O_WRONLY | O_TRUNC, 644 | O_CREAT);
+	outhandle = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (outhandle == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
