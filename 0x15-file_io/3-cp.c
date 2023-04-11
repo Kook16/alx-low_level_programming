@@ -37,12 +37,12 @@ int main(int argc, char *argv[])
 	}
 	if (close(inhandle) == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", inhandle);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", inhandle);
 		exit(100);
 	}
 	if (close(outhandle) == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't close fd %d\n", outhandle);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", outhandle);
 		exit(100);
 	}
 	return (0);
