@@ -17,23 +17,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || key == NULL || value == NULL || *key == '\0')
 		return (0);
 	idx = key_index(str_key, ht->size);
-	ptr_node = create_node(key, value);
-	if (ptr_node == NULL)
-		return (0);
 	ptr_t = ht->array[idx];
-	if (ptr_t != NULL)
+	if (ptr_t)
 	{
 		if (strcmp(ptr_t->key, key) == 0)
 		{
 			free(ptr_t->value);
 			ptr_t->value = strdup(value);
-			free(ptr_node->key);
-			free(ptr_node->value);
-			free(ptr_node);
 			return (1);
 		}
 		ptr_t = ptr_t->next;
 	}
+	ptr_node = create_node(key, value);
+	if (ptr_node == NULL)
+		return (0);
 	ptr_node->next = ht->array[idx];
 	ht->array[idx] = ptr_node;
 	return (1);
