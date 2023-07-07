@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-#define INDEX unsigned long int
+
 /**
  * hash_table_set - adds an element to the hash table
  * @ht: A pointer to a hash table
@@ -12,10 +12,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_table_t *ptr_t;
 	/* struct representing node of hash table */
 	hash_node_t *ptr_node, *head;
-	INDEX idx;
+	unsigned long int idx;
 	const unsigned char *str_key = (const unsigned char *)key;
 
-	if (ht == NULL || key == NULL)
+	if (ht == NULL || key == NULL || value == NULL)
+		return (0);
+	if (strcmp(key, "") == 0)
 		return (0);
 	ptr_t = ht;
 	idx = key_index(str_key, ptr_t->size);
