@@ -1,0 +1,15 @@
+CC = gcc
+SRC = school.c main.c
+EXECUTABLE = school
+
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(SRC:.c=.o)
+	$(CC) $^ -o $@
+
+
+%.o: %.c m.h
+	$(CC) -c &< -o $@
+
+clean:
+	rm -f $(EXECUTABLE) $(SRC:.c=.o)
