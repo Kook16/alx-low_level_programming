@@ -3,7 +3,8 @@
 #include <math.h>
 #include "search_algos.h"
 
-#define MIN(x, y) ((x) < (y) ? (x) : (y))
+/*#define MIN(x, y) ((x) < (y) ? (x) : (y))
+*/
 
 /**
  * jump_search - Searches for a value in a sorted array of integers using
@@ -18,32 +19,29 @@
 
 int jump_search(int *array, size_t size, int value)
 {
-int i = 0, j, status = 0;
-int block = sqrt(size);
+    int low, i, jump;
 
-if (!array)
-return (-1);
-
-while (array[block] <= value && block < (int)size)
-{
-printf("Value checked array[%d] = [%d]\n", i, array[i]);
-i = block;
-block += sqrt(size);
-if (block > (int)size - 1)
-return (-1);
-status = 1;
-}
-
-if (!status)
-printf("Value checked array[%d] = [%d]\n", i, array[i]);
-
-printf("Value found between indexes [%d] and [%d]\n", i, block);
-for (j = i; j < block; j++)
-{
-printf("Value checked array[%d] = [%d]\n", j, array[j]);
-if (array[j] == value)
-return (j);
-}
-return (-1);
-
+    if (array == NULL)
+        return (-1);
+    jump = sqrt(size);
+    printf("%d\n", jump);
+    low = 0;
+    for (i = 0; i < (int)size; i += jump)
+    {
+        if (array[i] == value)
+            return (i);
+        else if (value > array[i])
+            low = i;
+        else if (value < array[i] || i + jump >= (int)size)
+            break;
+        printf("Value checked array[%d] = [%d]\n", i, array[i]);
+    }
+    printf("Value found between indexes [%d] and [%d]\n", low, i);
+    for (i = low; i < (int)size && i < low + jump; i++)
+    {
+        printf("Value checked array[%d] = [%d]\n", i, array[i]);
+        if (value == array[i])
+            return (i);
+    }
+    return (-1);
 }
